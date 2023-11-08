@@ -1,0 +1,16 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract BscInteraction {
+
+  event Message(address from, string message);
+
+  function sendMessage(string calldata _message) external {
+    emit Message(msg.sender, _message);
+  }
+
+  function getMessage() external pure returns (string memory) {
+    return "Hello World!";
+  }
+
+}
